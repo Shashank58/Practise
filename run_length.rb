@@ -1,0 +1,27 @@
+#Using the Ruby language, have the function RunLength(str) take the 
+#str parameter being passed and return a compressed version of the 
+#string using the Run-length encoding algorithm. This algorithm works 
+#by taking the occurrence of each repeating character and outputting 
+#that number along with a single character of the repeating sequence. 
+#For example: "wwwggopp" would return 3w2g1o2p. The string will not 
+#contain any numbers, punctuation, or symbols.
+#Input = "aabbcde"Output = "2a2b1c1d1e"
+#Input = "wwwbbbw"Output = "3w3b1w"
+
+str = gets.chomp
+x = 0
+while x < str.length
+	count = 1
+	j = x+1
+	while j < str.length
+		if str[x] == str[j]
+			count += 1
+			j += 1
+		else
+			break
+		end
+	end
+	print count.to_s + str[x]
+	x = j
+end
+print "\n"
