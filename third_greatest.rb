@@ -11,13 +11,8 @@
 
 str_arr = gets.chomp.split(/ /)
 if str_arr.length > 2
-	str_info = Hash.new
-	str_arr.each do |value|
-		str_info[value] = value.length
-	end
-	new_one = str_info.sort_by {|key, value| value}
-	third = new_one[-3][0]
-	puts third
+	new_str = str_arr.sort_by(&:length)
+	puts new_str[-3]
 else
 	puts "Not enough input"
 end
